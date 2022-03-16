@@ -1,0 +1,1 @@
+# amindi-ge.ge
