@@ -2,6 +2,9 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useAppContext } from '../Store'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const parentVariants = {
     initial: "",
@@ -25,9 +28,15 @@ const childrenVariants = {
         }
     }
 }
-function getDate(date) {
 
-}
+const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2.5,
+    slidesToScroll: 3, 
+    arrows: false,
+};
 
 function ForecastBy12Days() {
     const [data, setData] = useState(null)
@@ -53,58 +62,115 @@ function ForecastBy12Days() {
             </div>
             {
                 data && <motion.div variants={parentVariants} initial="initial" animate="animate" key={data.city?.id}>
-                    <div className='grid xl:grid-cols-8 md:grid-cols-4  gap-4'>
-                        {
-                            data.daily?.map((d, i) => {
-                                const day = new Date(d.dt * 1000).toLocaleDateString("ka", {
-                                    weekday: "long",
-                                }).toLowerCase()
-                                let dayKa;
+                    <div className='grid xl:grid-cols-8 md:grid-cols-4 md:grid hidden gap-4'>
+                            {
+                                data.daily?.map((d, i) => {
+                                    const day = new Date(d.dt * 1000).toLocaleDateString("ka", {
+                                        weekday: "long",
+                                    }).toLowerCase()
+                                    let dayKa;
 
-                                switch (day) {
-                                    case 'monday':
-                                        dayKa = 'ორშაბათი'
-                                        break;
-                                    case 'tuesday':
-                                        dayKa = 'სამშაბათი'
-                                        break;
-                                    case 'wednesday':
-                                        dayKa = 'ოთხშაბათი'
-                                        break;
-                                    case 'thursday':
-                                        dayKa = 'ხუთშაბათი'
-                                        break;
-                                    case 'friday':
-                                        dayKa = 'პარასკევი'
-                                        break;
-                                    case 'saturday':
-                                        dayKa = 'შაბათი'
-                                        break;
-                                    case 'sunday':
-                                        dayKa = 'კვირა'
-                                        break;
+                                    switch (day) {
+                                        case 'monday':
+                                            dayKa = 'ორშაბათი'
+                                            break;
+                                        case 'tuesday':
+                                            dayKa = 'სამშაბათი'
+                                            break;
+                                        case 'wednesday':
+                                            dayKa = 'ოთხშაბათი'
+                                            break;
+                                        case 'thursday':
+                                            dayKa = 'ხუთშაბათი'
+                                            break;
+                                        case 'friday':
+                                            dayKa = 'პარასკევი'
+                                            break;
+                                        case 'saturday':
+                                            dayKa = 'შაბათი'
+                                            break;
+                                        case 'sunday':
+                                            dayKa = 'კვირა'
+                                            break;
 
-                                    default: ''
-                                        break;
-                                }
+                                        default: ''
+                                            break;
+                                    }
 
-                                return <motion.div className='flex flex-col items-center bg-sidebar-white p-5 rounded-2xl' variants={childrenVariants} key={i}>
-                                    <div className='font-helvetica text-xs text-white opacity-60'>
-                                        {dayKa}
-                                    </div>
-                                    <div className='min-w-[50px] min-h-[70px]'>
-                                        <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
-                                    </div>
-                                    <div className='font-myriad text-xs text-white mt-2'>
-                                        {Math.round(d.temp.min)}°  {Math.round(d.temp.max)}°
-                                    </div>
-                                    <div>
+                                    return <motion.div className='flex flex-col items-center bg-sidebar-white p-5 rounded-2xl' variants={childrenVariants} key={i}>
+                                        <div className='font-helvetica text-xs text-white opacity-60'>
+                                            {dayKa}
+                                        </div>
+                                        <div className='min-w-[50px] min-h-[70px]'>
+                                            <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
+                                        </div>
+                                        <div className='font-myriad text-xs text-white mt-2'>
+                                            {Math.round(d.temp.min)}°  {Math.round(d.temp.max)}°
+                                        </div>
+                                        <div>
 
-                                    </div>
-                                </motion.div>
-                            })
-                        }
+                                        </div>
+                                    </motion.div>
+
+                                })
+                            }
                     </div>
+                    <div className="md:hidden">
+                        <Slider {...settings} >
+                            {
+                                data.daily?.map((d, i) => {
+                                    const day = new Date(d.dt * 1000).toLocaleDateString("ka", {
+                                        weekday: "long",
+                                    }).toLowerCase()
+                                    let dayKa;
+
+                                    switch (day) {
+                                        case 'monday':
+                                            dayKa = 'ორშაბათი'
+                                            break;
+                                        case 'tuesday':
+                                            dayKa = 'სამშაბათი'
+                                            break;
+                                        case 'wednesday':
+                                            dayKa = 'ოთხშაბათი'
+                                            break;
+                                        case 'thursday':
+                                            dayKa = 'ხუთშაბათი'
+                                            break;
+                                        case 'friday':
+                                            dayKa = 'პარასკევი'
+                                            break;
+                                        case 'saturday':
+                                            dayKa = 'შაბათი'
+                                            break;
+                                        case 'sunday':
+                                            dayKa = 'კვირა'
+                                            break;
+
+                                        default: ''
+                                            break;
+                                    }
+
+                                    return <motion.div className='flex flex-col items-center bg-sidebar-white p-5 rounded-2xl ' variants={childrenVariants} key={i}>
+                                        <div className='font-helvetica text-xs text-white opacity-60'>
+                                            {dayKa}
+                                        </div>
+                                        <div className='min-w-[50px] min-h-[70px]'>
+                                            <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
+                                        </div>
+                                        <div className='font-myriad text-xs text-white mt-2'>
+                                            {Math.round(d.temp.min)}°  {Math.round(d.temp.max)}°
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                    </motion.div>
+
+                                })
+                            }
+                        </Slider>
+                    </div>
+
                 </motion.div>
             }
             <div className="grid grid-cols-8 gap-4 mt-4">

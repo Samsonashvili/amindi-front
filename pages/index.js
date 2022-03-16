@@ -36,6 +36,9 @@ export default function Home() {
         <div className="mb-4" >
           <AirPolution />
         </div>
+        <div className="mb-4" >
+          <Currency />
+        </div>
       </div>
 
     </div>
