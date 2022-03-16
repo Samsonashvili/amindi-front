@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.11" height="40.92" viewBox="0 0 64.11 40.92">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.147" y1="0.853" x2="0.853" y2="0.146" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fdb728"/>
+      <stop offset="1" stop-color="#ffcd23"/>
+    </linearGradient>
+  </defs>
+  <g id="Haze" transform="translate(-1338.5 -379.99)">
+    <circle id="Ellipse_45" data-name="Ellipse 45" cx="20.46" cy="20.46" r="20.46" transform="translate(1338.5 379.99)" fill="url(#linear-gradient)"/>
+    <path id="Path_94" data-name="Path 94" d="M1369.61,401.15h-10a1.5,1.5,0,1,1,0-3h10a1.5,1.5,0,1,1,0,3Z" fill="#fff"/>
+    <path id="Path_95" data-name="Path 95" d="M1391.11,401.15h-15a1.5,1.5,0,1,1,0-3h15a1.5,1.5,0,0,1,0,3Z" fill="#fff"/>
+    <path id="Path_96" data-name="Path 96" d="M1369.61,415.65h-10a1.5,1.5,0,1,1,0-3h10a1.5,1.5,0,1,1,0,3Z" fill="#fff"/>
+    <path id="Path_97" data-name="Path 97" d="M1391.11,415.65h-15a1.5,1.5,0,1,1,0-3h15a1.5,1.5,0,0,1,0,3Z" fill="#fff"/>
+    <path id="Path_98" data-name="Path 98" d="M1379.61,408.65h-20a1.5,1.5,0,1,1,0-3h20a1.5,1.5,0,0,1,0,3Z" fill="#fff"/>
+    <path id="Path_99" data-name="Path 99" d="M1401.11,408.65h-15a1.5,1.5,0,0,1,0-3h15a1.5,1.5,0,1,1,0,3Z" fill="#fff"/>
+  </g>
+</svg>

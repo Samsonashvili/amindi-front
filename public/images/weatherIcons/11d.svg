@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="66.328" height="63.264" viewBox="0 0 66.328 63.264">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.146" y1="0.854" x2="0.853" y2="0.147" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fdb728"/>
+      <stop offset="1" stop-color="#ffcd23"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-0.079" y1="0.836" x2="0.798" y2="0.107" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.216" y1="1.112" x2="0.787" y2="0.224" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d0e8f8"/>
+      <stop offset="1" stop-color="#e1eef9"/>
+    </linearGradient>
+  </defs>
+  <g id="Scattered_Thunderstorm" data-name="Scattered Thunderstorm" transform="translate(-276.463 -374.24)">
+    <circle id="Ellipse_41" data-name="Ellipse 41" cx="12.96" cy="12.96" r="12.96" transform="translate(312.69 374.24)" fill="url(#linear-gradient)"/>
+    <path id="Path_33" data-name="Path 33" d="M303.73,411.16a5.72,5.72,0,0,0-4.5,2.59L294,422.87c-.83,1.43-.15,2.5,1.49,2.38l4.3-.32c1.65-.12,2.35,1,1.56,2.42l-4.78,8.81c-.79,1.45-.39,1.78.88.73l17.3-14.23c1.28-1.05,1-1.84-.68-1.75l-6.61.33c-1.64.09-2.32-1-1.49-2.44l2.91-5c.82-1.43.15-2.6-1.5-2.6Z" fill="url(#linear-gradient-2)"/>
+    <path id="Path_34" data-name="Path 34" d="M322.13,414.89a10.66,10.66,0,1,0,0-21.32H322a17,17,0,0,0-32.44-5.07h-.26a13.2,13.2,0,0,0,0,26.39" fill="#fff"/>
+    <path id="Path_35" data-name="Path 35" d="M336.35,414.89a6.7,6.7,0,0,0,0-13.39h-.07a10.69,10.69,0,0,0-20.37-3.18h-.16a8.29,8.29,0,1,0,0,16.57" fill="url(#linear-gradient-3)"/>
+  </g>
+</svg>

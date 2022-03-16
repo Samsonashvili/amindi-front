@@ -1,0 +1,39 @@
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9">
+  <g id="g13">
+    <rect id="rect15" width="13.995" height="8.961" transform="translate(0.003)" fill="#fff"/>
+    <path id="path17" d="M.063,12" transform="translate(-0.06 -11.468)" fill="#ffffbd"/>
+    <path id="path19" d="M36.323,49.445" transform="translate(-34.83 -47.254)" fill="red"/>
+    <g id="g21" transform="translate(0.003)">
+      <g id="g23" transform="translate(0 0.886)">
+        <path id="polygon25" d="M.063,20v2.5H4.008Z" transform="translate(-0.063 -20)" fill="#13135f"/>
+      </g>
+      <path id="polygon27" d="M4.577,3.391h.808L.063,0V.532Z" transform="translate(-0.063)" fill="red"/>
+      <g id="g29" transform="translate(1.556)">
+        <path id="polygon31" d="M37.916,0l4.506,2.991V0Z" transform="translate(-37.916)" fill="#12145b"/>
+      </g>
+    </g>
+    <g id="g33" transform="translate(10.095 5.585)">
+      <path id="polygon35" d="M250.464,128.482V126h-3.9Z" transform="translate(-246.56 -126)" fill="#13135f"/>
+    </g>
+    <path id="polygon37" d="M213.868,126h-.808l5.281,3.374v-.537Z" transform="translate(-204.342 -120.415)" fill="red"/>
+    <g id="g39" transform="translate(7.977 6.006)">
+      <path id="polygon41" d="M199.546,138.5l-4.506-2.991V138.5Z" transform="translate(-195.04 -135.51)" fill="#12145b"/>
+    </g>
+    <g id="g43" transform="translate(10.095 0.909)">
+      <path id="polygon45" d="M250.464,20.513v2.481l-3.9,0Z" transform="translate(-246.56 -20.513)" fill="#13135f"/>
+    </g>
+    <path id="polygon47" d="M195.06,3.391h.916L201.081,0h-.927Z" transform="translate(-187.082)" fill="red"/>
+    <g id="g49" transform="translate(7.978)">
+      <path id="polygon51" d="M199.527,0,195.06,2.969V0Z" transform="translate(-195.06)" fill="#12145b"/>
+    </g>
+    <g id="g53" transform="translate(0.003 5.584)">
+      <path id="polygon55" d="M.071,128.484v-2.5H4.016Z" transform="translate(-0.071 -125.98)" fill="#13135f"/>
+    </g>
+    <path id="polygon57" d="M6.062,125.97H5.146L0,129.387H.928Z" transform="translate(0 -120.387)" fill="red"/>
+    <g id="g59" transform="translate(1.556 6.005)">
+      <path id="polygon61" d="M37.87,138.471l4.506-2.991v2.991Z" transform="translate(-37.87 -135.48)" fill="#12145b"/>
+    </g>
+    <rect id="rect63" width="1.187" height="8.997" transform="translate(6.421)" fill="red"/>
+    <rect id="rect65" width="13.997" height="1.448" transform="translate(0.003 3.779)" fill="red"/>
+  </g>
+</svg>

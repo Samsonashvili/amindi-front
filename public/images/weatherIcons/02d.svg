@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67.208" height="40.27" viewBox="0 0 67.208 40.27">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.147" y1="0.854" x2="0.854" y2="0.147" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fdb728"/>
+      <stop offset="1" stop-color="#ffcd23"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.207" y1="1.111" x2="0.774" y2="0.223" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d0e8f8"/>
+      <stop offset="1" stop-color="#e1eef9"/>
+    </linearGradient>
+  </defs>
+  <g id="Party_Cloudy" data-name="Party Cloudy" transform="translate(-730.8 -525.52)">
+    <circle id="Ellipse_43" data-name="Ellipse 43" cx="12.96" cy="12.96" r="12.96" transform="translate(766.19 525.52)" fill="url(#linear-gradient)"/>
+    <path id="Path_63" data-name="Path 63" d="M776.83,565.78a10.67,10.67,0,1,0,0-21.33h-.11a17,17,0,0,0-32.44-5.07H744a13.2,13.2,0,0,0,0,26.4" fill="#fff"/>
+    <path id="Path_64" data-name="Path 64" d="M791.05,565.78a6.7,6.7,0,1,0,0-13.39H791a10.69,10.69,0,0,0-20.37-3.18h-.16a8.29,8.29,0,1,0,0,16.58" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>

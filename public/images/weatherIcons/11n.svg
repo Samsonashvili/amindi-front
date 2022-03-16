@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67.542" height="68.104" viewBox="0 0 67.542 68.104">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.077" y1="0.836" x2="0.8" y2="0.107" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fdb728"/>
+      <stop offset="1" stop-color="#ffcd23"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.149" y1="0.851" x2="0.693" y2="0.307" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00aeef"/>
+      <stop offset="1" stop-color="#00bdf2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.213" y1="1.112" x2="0.781" y2="0.225" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d0e8f8"/>
+      <stop offset="1" stop-color="#e1eef9"/>
+    </linearGradient>
+  </defs>
+  <g id="Severe_Thunderstorm_Night" data-name="Severe Thunderstorm Night" transform="translate(-1185.126 -206.846)">
+    <path id="Path_20" data-name="Path 20" d="M1213.09,248.6a5.77,5.77,0,0,0-4.5,2.6l-5.26,9.12c-.83,1.43-.16,2.5,1.49,2.38l4.3-.32c1.64-.12,2.35,1,1.56,2.42l-4.79,8.81c-.78,1.45-.39,1.77.89.73l17.3-14.23c1.27-1.05,1-1.84-.68-1.75l-6.61.33c-1.65.09-2.32-1-1.5-2.44l2.91-5c.83-1.43.15-2.6-1.5-2.6Z" fill="url(#linear-gradient)"/>
+    <path id="Path_21" data-name="Path 21" d="M1238.43,235.52a14.6,14.6,0,0,1-4-28.64.77.77,0,0,1,.95,1,12.856,12.856,0,0,0-.52,3.61,13.1,13.1,0,0,0,13.08,13.08,13.24,13.24,0,0,0,3.61-.52.78.78,0,0,1,.75.2.76.76,0,0,1,.19.75,14.66,14.66,0,0,1-14.06,10.52Z" fill="url(#linear-gradient-2)"/>
+    <path id="Path_22" data-name="Path 22" d="M1231.49,252.34a10.66,10.66,0,1,0,0-21.32h-.1a17,17,0,0,0-32.45-5.07h-.25a13.2,13.2,0,1,0,0,26.39" fill="url(#linear-gradient-3)"/>
+    <path id="Path_23" data-name="Path 23" d="M1245.71,252.34a6.7,6.7,0,1,0,0-13.39h-.07a10.69,10.69,0,0,0-20.37-3.18h-.16a8.29,8.29,0,0,0,0,16.57" fill="#fff"/>
+  </g>
+</svg>

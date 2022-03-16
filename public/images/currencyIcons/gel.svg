@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 14 9">
+  <g id="georgia" transform="translate(0 -85.33)">
+    <rect id="Rectangle_22" data-name="Rectangle 22" width="14" height="9" transform="translate(0 85.33)" fill="#f0f0f0"/>
+    <g id="Group_66" data-name="Group 66" transform="translate(0 85.33)">
+      <path id="Path_20" data-name="Path 20" d="M7.875,85.33H6.125v3.656H0v1.688H6.125V94.33h1.75V90.674H14V88.986H7.875Z" transform="translate(0 -85.33)" fill="#d80027"/>
+      <path id="Path_21" data-name="Path 21" d="M79.826,121.882v-.609h-.609v.609h-.609v.609h.609v.609h.609v-.609h.609v-.609Z" transform="translate(-76.46 -120.29)" fill="#d80027"/>
+      <path id="Path_22" data-name="Path 22" d="M367.826,121.882v-.609h-.609v.609h-.609v.609h.609v.609h.609v-.609h.609v-.609Z" transform="translate(-356.585 -120.29)" fill="#d80027"/>
+      <path id="Path_23" data-name="Path 23" d="M79.826,324.545v-.609h-.609v.609h-.609v.609h.609v.609h.609v-.609h.609v-.609Z" transform="translate(-76.46 -317.745)" fill="#d80027"/>
+      <path id="Path_24" data-name="Path 24" d="M367.826,324.545v-.609h-.609v.609h-.609v.609h.609v.609h.609v-.609h.609v-.609Z" transform="translate(-356.585 -317.745)" fill="#d80027"/>
+    </g>
+  </g>
+</svg>
