@@ -27,7 +27,7 @@ function SimilarSites() {
             {
                 sites.map(site => (
                     <a href={site.url} key={site.name} target="_blank">
-                        <div className="rounded-2xl bg-sidebar-white text-white xl:p-12 lg:p-10 p-6 relative transition duration-150 min-h-[190px] overflow-hidden">
+                        <div className="rounded-2xl bg-sidebar-white text-white xl:p-12 lg:p-6 p-6 relative transition duration-150 min-h-[190px] overflow-hidden">
                             <div className="w-2/3">
                                 <div className="flex items-center">
                                     {
