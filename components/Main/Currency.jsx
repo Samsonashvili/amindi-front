@@ -19,8 +19,8 @@ function Currency() {
   }
 
   return (
-    currencyData && <>
-      <div className='flex justify-between mb-4 md:mt-6'>
+    currencyData && <div className="bg-sidebar-white p-6 mb-6 md:mb-0  rounded-xl">
+      <div className='flex justify-between mb-4'>
         <div className='xl:text-base md:text-xs font-myriad text-white'>
         ვალუტის კურსი
         </div>
@@ -28,13 +28,13 @@ function Currency() {
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-2 bg-sidebar-white rounded-[20px] overflow-hidden mb-4">
-          <div className="flex items-center col-span-1 text-white bg-sidebar-white py-1 px-3 rounded-[20px] gap-2 font-myriad">
+          <div className="flex items-center col-span-1 text-white bg-sidebar-white px-3 rounded-[20px] gap-2 font-myriad">
             <span className=" xl:text-base md:text-xs">GEL</span>
             <img src="/images/currencyIcons/gel.svg" alt="" />
             <span className=" xl:text-base md:text-xs">{lariValue.toString().substring(0, 4)}</span>
           </div>
 
-          <div className="col-span-1 py-1 pr-3">
+          <div className="col-span-1 pr-3">
             <input
               type="number"
               {...register('lari')}
@@ -57,13 +57,13 @@ function Currency() {
             const currencyValue = currency.cur_code.toLowerCase() === 'rub' ? currency.cur_value / 100 : currency.cur_value
 
             return <div className="grid grid-cols-2 bg-sidebar-white rounded-[20px] overflow-hidden mb-4">
-              <div className="flex items-center col-span-1 text-white bg-sidebar-white py-1 px-3 rounded-[20px] gap-2 font-myriad">
+              <div className="flex items-center col-span-1 text-white bg-sidebar-white px-3 rounded-[20px] gap-2 font-myriad">
                 <span className=" xl:text-base md:text-xs">{currency.cur_code}</span>
                 <img src={`/images/currencyIcons/${currency.cur_code.toLowerCase()}.svg`} alt="" />
                 <span className=" xl:text-base md:text-xs">{(lariValue === '' || lariValue == 0) ? '' : (lariValue / currencyValue).toFixed(2)}</span>
               </div>
 
-              <div className="col-span-1 py-1 pr-3">
+              <div className="col-span-1  pr-3">
                 <input
                   type="number"
                   {...register(currency.cur_code)}
@@ -79,7 +79,7 @@ function Currency() {
           })
         }
       </form>
-    </>
+    </div>
   )
 }
 

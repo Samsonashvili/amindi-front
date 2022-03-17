@@ -34,14 +34,63 @@ const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 2.5,
-    slidesToScroll: 3, 
+    slidesToScroll: 3,
     arrows: false,
 };
+
+function getDate(date) {
+    let monthGe = '';
+    const d = new Date((date - 19800) * 1000)
+    const myArray = d.toGMTString().split(" ");
+    const day = myArray[1]
+    const month = myArray[2]
+    switch (month) {
+        case 'Jan':
+            monthGe = 'იანვარი';
+            break;
+        case 'Feb':
+            monthGe = 'თებერვალი';
+            break;
+        case 'Mar':
+            monthGe = 'მარტი';
+            break;
+        case 'Apr':
+            monthGe = 'აპრილი';
+            break;
+        case 'May':
+            monthGe = 'მაისი';
+            break;
+        case 'Jun':
+            monthGe = 'ივნისი';
+            break;
+        case 'Jul':
+            monthGe = 'ივლისი';
+            break;
+        case 'Aug':
+            monthGe = 'აგვისტო';
+            break;
+        case 'Sept', "Sep":
+            monthGe = 'სექტემბერი';
+            break;
+        case 'Oct':
+            monthGe = 'ოქტომბერი';
+            break;
+        case 'Nov':
+            monthGe = 'ნოემბერი';
+            break;
+        case 'Dec':
+            monthGe = 'დეკემბერი';
+            break;
+        default:
+            break;
+    }
+    return (day + ' ' + monthGe)
+}
 
 function ForecastBy12Days() {
     const [data, setData] = useState(null)
     const { cityObject } = useAppContext()
-    console.log(cityObject, 'city');
+    console.log(data, 'city');
     useEffect(() => {
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityObject?.coord?.lat}&lon=${cityObject?.coord?.lon}&exclude=hourly,minutely,alerts&units=metric&appid=0a595777f15bfcfb7a415bd95948766c`)
             .then(res => res.json())
@@ -63,57 +112,60 @@ function ForecastBy12Days() {
             {
                 data && <motion.div variants={parentVariants} initial="initial" animate="animate" key={data.city?.id}>
                     <div className='grid xl:grid-cols-8 md:grid-cols-4 md:grid hidden gap-4'>
-                            {
-                                data.daily?.map((d, i) => {
-                                    const day = new Date(d.dt * 1000).toLocaleDateString("ka", {
-                                        weekday: "long",
-                                    }).toLowerCase()
-                                    let dayKa;
+                        {
+                            data.daily?.map((d, i) => {
+                                const day = new Date(d.dt * 1000).toLocaleDateString("ka", {
+                                    weekday: "long",
+                                }).toLowerCase()
+                                let dayKa;
 
-                                    switch (day) {
-                                        case 'monday':
-                                            dayKa = 'ორშაბათი'
-                                            break;
-                                        case 'tuesday':
-                                            dayKa = 'სამშაბათი'
-                                            break;
-                                        case 'wednesday':
-                                            dayKa = 'ოთხშაბათი'
-                                            break;
-                                        case 'thursday':
-                                            dayKa = 'ხუთშაბათი'
-                                            break;
-                                        case 'friday':
-                                            dayKa = 'პარასკევი'
-                                            break;
-                                        case 'saturday':
-                                            dayKa = 'შაბათი'
-                                            break;
-                                        case 'sunday':
-                                            dayKa = 'კვირა'
-                                            break;
+                                switch (day) {
+                                    case 'monday':
+                                        dayKa = 'ორშაბათი'
+                                        break;
+                                    case 'tuesday':
+                                        dayKa = 'სამშაბათი'
+                                        break;
+                                    case 'wednesday':
+                                        dayKa = 'ოთხშაბათი'
+                                        break;
+                                    case 'thursday':
+                                        dayKa = 'ხუთშაბათი'
+                                        break;
+                                    case 'friday':
+                                        dayKa = 'პარასკევი'
+                                        break;
+                                    case 'saturday':
+                                        dayKa = 'შაბათი'
+                                        break;
+                                    case 'sunday':
+                                        dayKa = 'კვირა'
+                                        break;
 
-                                        default: ''
-                                            break;
-                                    }
+                                    default: ''
+                                        break;
+                                }
 
-                                    return <motion.div className='flex flex-col items-center bg-sidebar-white p-5 rounded-2xl' variants={childrenVariants} key={i}>
-                                        <div className='font-helvetica text-xs text-white opacity-60'>
-                                            {dayKa}
-                                        </div>
-                                        <div className='min-w-[50px] min-h-[70px]'>
-                                            <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
-                                        </div>
-                                        <div className='font-myriad text-xs text-white mt-2'>
-                                            {Math.round(d.temp.min)}°  {Math.round(d.temp.max)}°
-                                        </div>
-                                        <div>
+                                return <motion.div className='flex flex-col items-center bg-sidebar-white p-5 rounded-2xl' variants={childrenVariants} key={i}>
+                                    <div className='font-helvetica text-xs text-white opacity-60'>
+                                        {dayKa}
+                                    </div>
+                                    <div className='text-white font-myriad text-sm'>
+                                        {getDate(d.dt)}
+                                    </div>
+                                    <div className='min-w-[50px] min-h-[70px]'>
+                                        <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
+                                    </div>
+                                    <div className='font-myriad text-xs text-white mt-2'>
+                                        {Math.round(d.temp.min)}°  {Math.round(d.temp.max)}°
+                                    </div>
+                                    <div>
 
-                                        </div>
-                                    </motion.div>
+                                    </div>
+                                </motion.div>
 
-                                })
-                            }
+                            })
+                        }
                     </div>
                     <div className="md:hidden">
                         <Slider {...settings} >

@@ -2,6 +2,7 @@ import AirPolution from "../components/Main/AirPolution"
 import Currency from "../components/Main/Currency"
 import ForecastBy12Days from "../components/Main/ForecastBy12Days"
 import ForecastByhours from "../components/Main/ForecastByhours"
+import SimilarSites from "../components/Main/SimilarSites"
 import WindandPressure from "../components/Main/WindandPressure"
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
             <Currency />
           </div>
         </div>
+        <SimilarSites />
       </div>
       <div className="sm:hidden">
         <div className="mb-4" >
