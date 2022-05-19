@@ -2,10 +2,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { cities } from './Header/cities.js';
 import { useAppContext } from './Store.js'
+import { useRouter } from "next/router"
 
 function Sidebar() {
     const [weatherInfo, setWeatherInfo] = useState(null)
     const { cityObject, cityName } = useAppContext()
+    const [isNewsPage, setIsNewsPage] = useState(false)
+
+    const router = useRouter()
 
     function getTime(unix_timestamp) {
         var date = new Date(unix_timestamp * 1000)
@@ -18,7 +22,7 @@ function Sidebar() {
         }
         return (hours + ":" + minutes)
     }
-    // console.log(cityObject);
+
     function getWeatherName(name) {
         let geoName;
         let weatherToLowerCase = name.toLowerCase();
@@ -51,6 +55,14 @@ function Sidebar() {
         return geoName;
     }
 
+
+
+    useEffect(() => {
+        router.pathname.includes('news') && setIsNewsPage(true)
+
+        return () => setIsNewsPage(false)
+    }, [router])
+
     useEffect(() => {
         setWeatherInfo([
             {
@@ -79,13 +91,12 @@ function Sidebar() {
             },
         ])
     }, [cityObject])
-
     return (
         <div className='mt-7'>
             <AnimatePresence exitBeforeEnter>
                 {
                     Object.keys(cityObject).length > 0 && <motion.div
-                        className='rounded-2xl bg-sidebar-white p-6 flex flex-col items-center'
+                        className={`rounded-2xl bg-sidebar-white p-6 flex flex-col items-center ${ isNewsPage ? 'hidden md:flex' : 'flex'}`}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1, transition: { duration: .4 } }}
                         exit={{ scale: 0, transition: { duration: .3 } }}
@@ -103,8 +114,8 @@ function Sidebar() {
                         </div>
                         <div className='min-w-[152px]'>
                             {
-                                (cityObject && weatherInfo) && weatherInfo.map(info => (
-                                    <div className='flex justify-between items-center w-full text-xs mb-[14px]'>
+                                (cityObject && weatherInfo) && weatherInfo.map((info, i) => (
+                                    <div className='flex justify-between items-center w-full text-xs mb-[14px]' key={i}>
                                         <div className='font-helvetica text-white opacity-70'>{info.infoName}</div>
                                         <div className='font-myriad text-sm text-white'>{info.infoText}</div>
                                     </div>

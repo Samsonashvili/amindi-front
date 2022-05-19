@@ -3,7 +3,7 @@ import { useAppContext } from '../Store'
 
 function WindandPressure() {
     const { cityObject } = useAppContext()
-    console.log(cityObject, "pres");
+    // console.log(cityObject, "pres");
     return (
         <div className='p-6 bg-sidebar-white rounded-xl'>
             <div className='xl:text-base md:text-xs text-white font-myriad mb-4'>ქარი და წნევა</div>

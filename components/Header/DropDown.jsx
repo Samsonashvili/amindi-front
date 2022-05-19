@@ -2,8 +2,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 
 import { cities } from './cities'
-// https://api.openweathermap.org/data/2.5/weather?lat=42.47521495708851&lon=44.47640515130203&appid=0a595777f15bfcfb7a415bd95948766c
-// https://api.openweathermap.org/data/2.5/weather?lat=42.339781247285316&lon=43.40784065021814&appid=0a595777f15bfcfb7a415bd95948766c
+// https://api.openweathermap.org/data/2.5/weather?lat=42.47521495708851&lon=44.47640515130203&appid=761653970bb425488bf5e4757f44718b
+// https://api.openweathermap.org/data/2.5/weather?lat=42.339781247285316&lon=43.40784065021814&appid=761653970bb425488bf5e4757f44718b
 
 import { useAppContext } from '../Store'
 
@@ -14,7 +14,7 @@ function DropDown() {
     const { cityObject, setCityObject, setAirPollution, cityName, setCityName } = useAppContext()
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?appid=0a595777f15bfcfb7a415bd95948766c&q=${cityName}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?appid=761653970bb425488bf5e4757f44718b&q=${cityName}`)
             .then(res => res.json())
             .then(data => {
                 setCityObject(data)
@@ -24,7 +24,7 @@ function DropDown() {
     }, [cityName])
 
     useEffect(() => {
-        Object.keys(cityObject).length > 0 && fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${cityObject?.coord.lat}&lon=${cityObject?.coord.lon}&appid=0a595777f15bfcfb7a415bd95948766c`)
+        Object.keys(cityObject).length > 0 && fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${cityObject?.coord.lat}&lon=${cityObject?.coord.lon}&appid=761653970bb425488bf5e4757f44718b`)
             .then(res => res.json())
             .then(data => setAirPollution(data.list[0].main.aqi))
     }, [cityObject])

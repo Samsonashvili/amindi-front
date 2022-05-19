@@ -33,6 +33,7 @@ const settings = {
     dots: false,
     infinite: true,
     speed: 500,
+    initialSlide: 0,
     slidesToShow: 2.5,
     slidesToScroll: 3,
     arrows: false,
@@ -90,9 +91,9 @@ function getDate(date) {
 function ForecastBy12Days() {
     const [data, setData] = useState(null)
     const { cityObject } = useAppContext()
-    console.log(data, 'city');
+    // console.log(data, 'city');
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityObject?.coord?.lat}&lon=${cityObject?.coord?.lon}&exclude=hourly,minutely,alerts&units=metric&appid=0a595777f15bfcfb7a415bd95948766c`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityObject?.coord?.lat}&lon=${cityObject?.coord?.lon}&exclude=hourly,minutely,alerts&units=metric&appid=761653970bb425488bf5e4757f44718b`)
             .then(res => res.json())
             .then(data => setData(data))
 
@@ -111,7 +112,7 @@ function ForecastBy12Days() {
             </div>
             {
                 data && <motion.div variants={parentVariants} initial="initial" animate="animate" key={data.city?.id}>
-                    <div className='grid xl:grid-cols-8 md:grid-cols-4 md:grid hidden gap-4'>
+                    <div className='xl:grid-cols-8 md:grid-cols-4 md:grid hidden gap-4'>
                         {
                             data.daily?.map((d, i) => {
                                 const day = new Date(d.dt * 1000).toLocaleDateString("ka", {
@@ -153,8 +154,8 @@ function ForecastBy12Days() {
                                     <div className='text-white font-myriad text-sm'>
                                         {getDate(d.dt)}
                                     </div>
-                                    <div className='min-w-[50px] min-h-[70px]'>
-                                        <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
+                                    <div className='w-[50px] h-[70px] flex items-center'>
+                                        <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} className="w-full" alt="" />
                                     </div>
                                     <div className='font-myriad text-xs text-white mt-2'>
                                         {Math.round(d.temp.min)}°  {Math.round(d.temp.max)}°
@@ -207,8 +208,11 @@ function ForecastBy12Days() {
                                         <div className='font-helvetica text-xs text-white opacity-60'>
                                             {dayKa}
                                         </div>
-                                        <div className='min-w-[50px] min-h-[70px]'>
-                                            <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
+                                        <div className='text-white font-myriad text-sm'>
+                                            {getDate(d.dt)}
+                                        </div>
+                                        <div className='w-[50px] h-[70px] flex items-center'>
+                                            <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} className="w-full" alt="" />
                                         </div>
                                         <div className='font-myriad text-xs text-white mt-2'>
                                             {Math.round(d.temp.min)}°  {Math.round(d.temp.max)}°
@@ -225,14 +229,14 @@ function ForecastBy12Days() {
 
                 </motion.div>
             }
-            <div className="grid grid-cols-8 gap-4 mt-4">
+            <div className="xl:grid-cols-8 md:grid-cols-4 gap-4 md:grid hidden mt-4">
                 {
                     !data && [...Array(8)].map((_, i) => (
-                        <div className='flex flex-col items-center bg-sidebar-white p-5 rounded-2xl animate-pulse w-[150px]' key={i}>
+                        <div className='flex flex-col items-center bg-sidebar-white p-5 rounded-2xl animate-pulse w-full' key={i}>
                             <div className='font-helvetica text-xs text-white opacity-60'>
                                 <div className='w-3 h-3'></div>
                             </div>
-                            <div className='min-w-[50px] min-h-[70px]'>
+                            <div className='min-w-[50px] min-h-[80px]'>
                                 <div className='w-5 h-5 rounded-full'></div>
                             </div>
                             <div className='font-myriad text-xs text-white mt-2'>

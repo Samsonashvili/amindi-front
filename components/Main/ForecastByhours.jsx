@@ -19,7 +19,7 @@ function ForecastByhours() {
         }
         return (hours + ":" + minutes)
     }
-    console.log(data, 'dataaaa');
+    // console.log(data, 'dataaaa');
 
     function getWeatherName(name) {
         let geoName;
@@ -73,7 +73,7 @@ function ForecastByhours() {
     // const d = new Date()
     // console.log(d.getDate());
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityObject?.coord?.lat}&lon=${cityObject?.coord?.lon}&exclude=current,minutely,daily,alerts&units=metric&appid=0a595777f15bfcfb7a415bd95948766c`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityObject?.coord?.lat}&lon=${cityObject?.coord?.lon}&exclude=current,minutely,daily,alerts&units=metric&appid=761653970bb425488bf5e4757f44718b`)
             .then(res => res.json())
             .then(data => setData(data))
 
@@ -83,18 +83,16 @@ function ForecastByhours() {
     }, [cityObject])
 
     return (
-        <AnimatePresence>
+        <div>
             {
-                Object.keys(cityObject).length > 0 && <motion.div className='bg-sidebar-white rounded-xl p-6 flex flex-col' initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    exit={{ scale: 0 }}>
+                Object.keys(cityObject).length > 0 && <div className='bg-sidebar-white rounded-xl p-6 flex flex-col'>
                     <div className='xl:text-base md:text-xs font-myriad text-white mb-4'>
                         ამინდი საათების მიხედვით
                     </div>
                     <div className='max-h-[280px] overflow-auto white-scroll_container'>
                         {
                             data?.hourly?.map((d, i) => {
-                                return <div className='mb-5 flex items-center justify-between'>
+                                return <div className='mb-5 flex items-center justify-between' key={i}>
                                     <div>
                                         <div className='flex items-center'>
                                             <div><img src="/images/clock.svg" alt="" /></div>
@@ -125,10 +123,10 @@ function ForecastByhours() {
                             })
                         }
                     </div>
-                </motion.div>
+                </div>
             }
 
-        </AnimatePresence>
+        </div>
     )
 }
 

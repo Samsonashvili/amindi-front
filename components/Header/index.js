@@ -1,12 +1,17 @@
 import DateHours from './DateHours'
 import DropDown from './DropDown'
+import Link from 'next/link'
 
 function Header() {
     return (
         <>
             <div className='container pt-8 md:flex items-center justify-between hidden'>
                 <div className='flex items-center'>
-                    <img src="/images/logo.svg" alt="logo" />
+                    <Link href="/">
+                        <a>
+                            <img src="/images/logo.svg" alt="logo" />
+                        </a>
+                    </Link>
                     <DropDown />
                 </div>
                 <DateHours />

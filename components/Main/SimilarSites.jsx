@@ -1,3 +1,6 @@
+import { useRouter } from "next/router"
+import { useState, useEffect } from "react";
+
 const sites = [
     {
         name: 'MAI-AVTO.GE',
@@ -22,12 +25,23 @@ const sites = [
 ]
 
 function SimilarSites() {
+    const [isNewsPage, setIsNewsPage] = useState(false)
+
+    const router = useRouter()
+
+    useEffect(() => {
+        router.pathname.includes('news') && setIsNewsPage(true)
+
+        return () => setIsNewsPage(false)
+    }, [router])
+
+
     return (
-        <div className='grid lg:grid-cols-3 gap-4 mb-8'>
+        <div className={`${isNewsPage ? 'flex flex-col mt-7' : 'grid lg:grid-cols-3'} gap-4 mb-8`}>
             {
                 sites.map(site => (
                     <a href={site.url} key={site.name} target="_blank">
-                        <div className="rounded-2xl bg-sidebar-white text-white xl:p-12 lg:p-6 p-6 relative transition duration-150 min-h-[190px] overflow-hidden">
+                        <div className={`rounded-[18px] ${isNewsPage ? 'bg-site-deep-blue' : 'bg-sidebar-white'} text-white xl:p-8 lg:p-6 p-6 relative transition duration-150 min-h-[190px] overflow-hidden`}>
                             <div className="w-2/3">
                                 <div className="flex items-center">
                                     {
@@ -44,7 +58,7 @@ function SimilarSites() {
                                 </div>
                             </div>
 
-                            <div className='absolute right-[-5px] top-0 h-full'>
+                            <div className='absolute right-[-12px] top-0 h-full'>
                                 <img src={site.img} alt={site.name} className="h-full" />
                             </div>
                         </div>

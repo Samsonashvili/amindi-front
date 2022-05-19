@@ -6,7 +6,7 @@ function AirPolution() {
     const [pollutionObject, setPollutionObject] = useState({})
 
     const { airPollution } = useAppContext()
-    console.log(airPollution, "დაბინძურობა");
+    // console.log(airPollution, "დაბინძურობა");
     const airPolutions = [
         {
             id: 1,
@@ -53,7 +53,7 @@ function AirPolution() {
         return () => setPollutionObject({})
     }, [airPollution])
 
-    console.log(pollutionObject);
+    // console.log(pollutionObject);
 
     return (
         <div className='p-6 bg-sidebar-white rounded-xl max-h-[168px]'>
@@ -65,8 +65,8 @@ function AirPolution() {
             }
             <div className='flex flex-wrap'>
                 {
-                    airPolutions.map((polution) =>
-                        <div className='flex items-center mr-1 mb-2'>
+                    airPolutions.map((polution,i) =>
+                        <div className='flex items-center mr-1 mb-2' key={i}>
                             <div className='w-1 h-1 rounded-full' style={polution.background} ></div>
                             <div className='text-[10px] text-white opacity-60 ml-1'>{polution.type}</div>
                         </div>

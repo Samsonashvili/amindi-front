@@ -14,7 +14,7 @@ function Currency() {
   }, [])
 
   const onSubmit = (data, value, field) => {
-    console.log(value);
+    // console.log(value);
     field === 'other' ? setLariValue(data * value) : setLariValue(value / data)
   }
 
@@ -53,10 +53,10 @@ function Currency() {
         {
 
 
-          currencyData.map(currency => {
+          currencyData.map((currency, i) => {
             const currencyValue = currency.cur_code.toLowerCase() === 'rub' ? currency.cur_value / 100 : currency.cur_value
 
-            return <div className="grid grid-cols-2 bg-sidebar-white rounded-[20px] overflow-hidden mb-4">
+            return <div className="grid grid-cols-2 bg-sidebar-white rounded-[20px] overflow-hidden mb-4" key={i}>
               <div className="flex items-center col-span-1 text-white bg-sidebar-white px-3 rounded-[20px] gap-2 font-myriad">
                 <span className=" xl:text-base md:text-xs">{currency.cur_code}</span>
                 <img src={`/images/currencyIcons/${currency.cur_code.toLowerCase()}.svg`} alt="" />
