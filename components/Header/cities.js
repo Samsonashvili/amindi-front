@@ -67,7 +67,7 @@ export const cities = [
     {
         name_geo: 'გუდაური',
         search_value: 'gudauri',
-        name_eng: 'gudauri'
+        name_eng: 'gudauta'
     },
     {
         name_geo: 'გუდაუთა',

@@ -18,7 +18,11 @@ function Header() {
             </div>
             <div className='container pt-8 md:hidden items-center justify-between flex-col'>
                 <div className='flex items-center justify-between'>
-                    <img src="/images/logo.svg" alt="logo" />
+                    <Link href="/">
+                        <a>
+                            <img src="/images/logo.svg" alt="logo" />
+                        </a>
+                    </Link>
                     <DateHours />
                 </div>
                 <DropDown />

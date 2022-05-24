@@ -101,22 +101,24 @@ function NewsSlider() {
 
                 {
                     data?.map((d, i) => {
-                        return <Link href={`/news/${d.id}`}>
-                            <motion.div className='flex flex-col items-center bg-sidebar-white rounded-xl overflow-hidden w-full cursor-pointer' variants={childrenVariants} key={i}>
-                                <div className='font-helvetica relative'>
-                                    <Image
-                                        width={550}
-                                        height={250}
-                                        objectFit='cover'
-                                        src={'https://api.amindi-ge.cc/' + d.photo}
-                                        alt={d.title}
-                                    />
-                                    <div className='p-4 min-h-[104px]'>
-                                        <h3 className='line-clamp-2 text-sm font-myriad'>{d.title}</h3>
-                                        <p className='line-clamp-2 text-xs opacity-60'>{d.description}</p>
+                        return <Link href={`/news/${d.id}`} key={i}>
+                            <a>
+                                <motion.div className='flex flex-col items-center bg-sidebar-white rounded-xl overflow-hidden w-full cursor-pointer' variants={childrenVariants}>
+                                    <div className='font-helvetica relative'>
+                                        <Image
+                                            width={550}
+                                            height={250}
+                                            objectFit='cover'
+                                            src={'https://api.amindi-ge.cc/' + d.photo}
+                                            alt={d.title}
+                                        />
+                                        <div className='p-4 min-h-[104px]'>
+                                            <h3 className='line-clamp-2 text-sm font-myriad'>{d.title}</h3>
+                                            <p className='line-clamp-2 text-xs opacity-60'>{d.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </motion.div>
+                                </motion.div>
+                            </a>
                         </Link>
                     })
                 }

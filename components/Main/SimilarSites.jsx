@@ -40,7 +40,7 @@ function SimilarSites() {
         <div className={`${isNewsPage ? 'flex flex-col mt-7' : 'grid lg:grid-cols-3'} gap-4 mb-8`}>
             {
                 sites.map(site => (
-                    <a href={site.url} key={site.name} target="_blank">
+                    <a href={site.url} key={site.name} target="_blank" rel="noreferrer">
                         <div className={`rounded-[18px] ${isNewsPage ? 'bg-site-deep-blue' : 'bg-sidebar-white'} text-white xl:p-8 lg:p-6 p-6 relative transition duration-150 min-h-[190px] overflow-hidden`}>
                             <div className="w-2/3">
                                 <div className="flex items-center">

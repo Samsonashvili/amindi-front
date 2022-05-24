@@ -6,7 +6,7 @@ import { FacebookShareButton, TwitterShareButton } from 'react-share';
 import { useState, useEffect } from 'react';
 
 
-function singleNews({ data }) {
+function SingeNews({ data }) {
     const [shareUrl, setShareUrl] = useState(null)
     const router = useRouter();
     // const newsId = router.query.id
@@ -77,12 +77,7 @@ export async function getServerSideProps(context) {
     const res = await fetch(`https://api.amindi-ge.cc/api/v1/news?id=${id}`)
     const data = await res.json()
 
-    // const res = await fetch(`http://localhost:3000/api/hello`)
-    // const allData = await res.json()
-
-    // const data = allData.find(d => d.id == id)
-
     return { props: { data } }
 }
 
-export default singleNews
+export default SingeNews
