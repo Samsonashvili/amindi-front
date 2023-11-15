@@ -74,7 +74,7 @@ function SingeNews({ data }) {
 export async function getServerSideProps(context) {
     const id = context.params.id
 
-    const res = await fetch(`https://api.amindi-ge.cc/api/v1/news?id=${id}`)
+    const res = await fetch(`https://admin.amindi.cc/api/v1/news?id=${id}`)
     const data = await res.json()
 
     return { props: { data } }
