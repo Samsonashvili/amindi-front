@@ -15,7 +15,7 @@ function News() {
 
   function getData(ref) {
 
-    fetch(`https://api.amindi-ge.cc/api/v1/${!isTopNews ? 'all-news' : 'top-news'}?page=${page}`)
+    fetch(`https://admin.amindi.cc/api/v1/${!isTopNews ? 'all-news' : 'top-news'}?page=${page}`)
       .then(res => res.json())
       .then(d => {
         if (ref === 'pageChange') {
